@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert_book</title>
+</head>
+<body>
+    <center>
+        <h1>insert_book</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="se">insert_section</label><br>
+            <select name="se" id="se">
+                {% for s in so %}
+                <option value="{{s.section}}">{{s.section}}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="bn">insert_book_name</label><br>
+            <input type="text" name="bn"><br><br>
+            <label for="a">insert_auther</label><br>
+            <input type="text" name="a"><br><br>
+            <input type="submit" value="insert">
+            <input type="reset" value="clear">
+        </form>
+    </center>
+</body>
+</html>
